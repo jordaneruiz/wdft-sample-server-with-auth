@@ -96,7 +96,7 @@ router.post('/signin', (req, res) => {
                 //if it matches
                 if (doesItMatch) {
                   // req.session is the special object that is available to you
-                  user.passwordHash = "***";
+                  userData.passwordHash = "***";
                   req.session.loggedInUser = userData;
                   console.log('Signin', req.session)
                   res.status(200).json(userData)
