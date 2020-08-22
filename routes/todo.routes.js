@@ -32,7 +32,7 @@ router.post('/create', isLoggedIn, (req, res) => {
           })  
 })
 
-router.get('/todos/:myId', isLoggedIn, (req, res) => {
+router.get('/todos/:myId', isLoggedIn,  (req, res) => {
     TodoModel.findById(req.params.myId)
      .then((response) => {
           res.status(200).json(response)
