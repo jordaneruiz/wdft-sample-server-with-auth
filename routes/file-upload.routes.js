@@ -10,7 +10,7 @@ router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {
       next(new Error('No file uploaded!'));
       return;
     }
-    res.json({ secure_url: req.file.path });
+    res.json({ image: req.file.path });
 })
 
 module.exports = router;
