@@ -18,9 +18,9 @@ router.get('/todos', (req, res) => {
 })
 
 router.post('/create', isLoggedIn, (req, res) => {  
-    const {name, description, completed} = req.body;
+    const {name, description, completed, image} = req.body;
     console.log(req.body)
-    TodoModel.create({name: name, description: description, completed: completed})
+    TodoModel.create({name, description, completed, image})
           .then((response) => {
                res.status(200).json(response)
           })
