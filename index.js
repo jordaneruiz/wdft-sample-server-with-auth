@@ -34,7 +34,10 @@ const logger = require('morgan');
 app.use(logger('dev'));
 
 const cors = require('cors')
-app.use(cors())
+app.use(cors({
+  credentials: true, 
+  origin: ['http://localhost:3000']
+}))
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
@@ -57,6 +60,9 @@ app.use('/api', authRoutes);
 
 const fileUploads = require('./routes/file-upload.routes')
 app.use('/api', fileUploads);
+
+const stripeRoutes = require('./routes/stripe.route')
+app.use('/api', stripeRoutes);
 
 
 app.use((req, res, next) => {
