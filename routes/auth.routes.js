@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 
 const UserModel = require('../models/User.model');
 
-const { isLoggedIn } = require('../helpers/auth-helper'); // to check if user is loggedIn
+const { isLoggedIn } = require('../helpers/auth-helper'); // middleware to check if user is loggedIn
 
 router.post('/signup', (req, res) => {
     const {username, email, password } = req.body;

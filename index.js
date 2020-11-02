@@ -58,6 +58,10 @@ app.use('/api', todoRoutes);
 const authRoutes = require('./routes/auth.routes')
 app.use('/api', authRoutes);
 
+const fileUploads = require('./routes/file-upload.routes')
+app.use('/api', fileUploads);
+
+
 app.use((req, res, next) => {
   // If no routes match, send them the React HTML.
   res.sendFile(__dirname + "/public/index.html");
