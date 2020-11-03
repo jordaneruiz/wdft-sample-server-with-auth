@@ -24,7 +24,7 @@ router.post('/signup', (req, res) => {
     if (!myRegex.test(email)) {
         res.status(500)
           .json({
-            errorMessage: 'Email format not correct'
+            errorMessage: 'Email format not correct'//how to show the error message the server is sending? in the catch block in the signin blaoc in app.js in User side
         });
         return;  
     }
